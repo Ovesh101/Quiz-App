@@ -9,12 +9,18 @@ const useForm = (getFreshModelObject) => {
 
     const handleInputChange = e => {
         const { name, value } = e.target;
+        setErrors({
+            ...errors,
+            [name]: '' 
+        });
+      
         setValues({
             ...values,
-            [name]: value
+            [name] : value
         });
+    
     };
-
+         
     // Return an object containing all values
     return {
         values,
